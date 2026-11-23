@@ -12,10 +12,6 @@ requirements = python3,kivy==2.3.0
 orientation = portrait
 fullscreen = 0
 
-# Optional: uncomment after adding these image files to your project
-# icon.filename = %(source.dir)s/assets/icon.png
-# presplash.filename = %(source.dir)s/assets/presplash.png
-
 # Android
 android.permissions =
 android.api = 33
@@ -24,9 +20,10 @@ android.ndk = 25b
 android.archs = arm64-v8a, armeabi-v7a
 android.accept_sdk_license = True
 android.allow_backup = True
-
-# APK for testing on your own phone (switch to aab + api 35 for Google Play later)
 android.release_artifact = apk
+
+# Pinned to a stable release (fixes the Python 3.14 build error)
+p4a.branch = v2024.01.21
 
 [buildozer]
 log_level = 2
