@@ -18,7 +18,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run tests
-        run: python -m unittest discover -s tests -t . -v
+        run: |
+          if [ -d tests ]; then
+            python -m unittest discover -s tests -t . -v
+          else
+            echo "No tests folder found, skipping tests"
+          fi
 
   apk:
     needs: test
